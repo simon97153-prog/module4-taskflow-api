@@ -5,11 +5,17 @@ Containerizes the Module 3 Java 21 / Spring Boot TaskFlow API with a two-stage D
 ## Deployment status
 
 Local Docker build and API verification completed on 2026-10-16 (Asia/Singapore).
-Railway deployment is pending. No live URL or deployment screenshots are available yet.
+Railway deployment verified ACTIVE on 2026-10-16 (Asia/Singapore). Public API verified with GET 200 and POST 201.
 
-- Live API URL: **Pending Railway deployment**
-- Railway dashboard screenshot: **Pending**
-- Live API screenshot: **Pending**
+- Live API URL: https://module4-taskflow-api-production-6352.up.railway.app/api/tasks
+- GitHub repository: https://github.com/simon97153-prog/module4-taskflow-api
+- Railway project: adaptable-learning
+- Public domain target port: 8080
+
+![Railway active deployment](screenshots/railway-dashboard.jpg)
+![Live API response](screenshots/live-api.jpg)
+
+Screenshots show the initial successful deployment. Tasks are stored in memory, so subsequent redeployments reset the sample data.
 
 ## Run locally with Docker
 
@@ -34,17 +40,11 @@ The build stage uses Maven and Java 21 to generate the JAR inside Docker; the ru
 
 1. Create a Railway project from this GitHub repository and select the `main` branch.
 2. Keep the repository root as the service root; the Dockerfile is located there.
-3. Set the service variable `PORT=8080`, matching the application's listening port.
+3. The application listens on Spring Boot's default port 8080; no extra environment variable was needed.
 4. Wait for the deployment to become active.
 5. Under Settings → Networking, generate a public domain with target port **8080**.
-6. Open `https://YOUR-DOMAIN/api/tasks` and verify JSON is returned. An empty array `[]` is valid for a freshly started application.
-7. Replace the pending live URL above with the actual API URL.
-8. Save genuine screenshots as `screenshots/railway-dashboard.png` and `screenshots/live-api.png`, then embed them here:
-
-```markdown
-![Railway active deployment](screenshots/railway-dashboard.png)
-![Live API response](screenshots/live-api.png)
-```
+6. Open the live API URL above and verify JSON is returned. An empty array `[]` is valid for a freshly started application.
+7. Save the active deployment and live API screenshots in `screenshots/` and include them in this README.
 
 Railway detects a root Dockerfile automatically: https://docs.railway.com/services
 
@@ -54,11 +54,11 @@ The first local container start failed because host port 8080 was occupied. Mapp
 
 Tasks are held in memory and disappear after restart or redeployment. This course demo has no authentication; use sample data only. No database is required for the mandatory TaskFlow assignment.
 
-Railway deployment and its screenshots remain unfinished until account setup and live verification are completed. No optional stretch goal is claimed.
+The initial public URL check returned 404 while the first deployment was still starting. After Railway reported ACTIVE, GET returned 200 and POST returned 201. Deployment and screenshots are complete. No optional stretch goal is claimed.
 
 ## Submission
 
-Submit this GitHub repository URL to NTULearn after adding the live URL and both screenshots. Because the repository is private, ensure the assessor can access it before submission.
+Submit https://github.com/simon97153-prog/module4-taskflow-api to NTULearn. Because the repository is private, ensure the assessor can access it before submission.
 
 ## Module 3 API reference
 
