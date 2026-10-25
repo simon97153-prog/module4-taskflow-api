@@ -14,6 +14,9 @@ Railway deployment verified ACTIVE on 2026-10-16 (Asia/Singapore). Public API ve
 
 ![Railway active deployment](screenshots/railway-dashboard.jpg)
 ![Live API response](screenshots/live-api.jpg)
+![Railway test - Create task](screenshots/Railway%20Test%20-%20Creat%20Task.png)
+![Railway test - Get task](screenshots/Railway%20Test%20-%20Get%20Task.png)
+![Railway test - Update a task](screenshots/Railway%20Test%20-%20Update%20a%20Task.png)
 
 Screenshots show the initial successful deployment. Tasks are stored in memory, so subsequent redeployments reset the sample data.
 
@@ -55,10 +58,6 @@ The first local container start failed because host port 8080 was occupied. Mapp
 Tasks are held in memory and disappear after restart or redeployment. This course demo has no authentication; use sample data only. No database is required for the mandatory TaskFlow assignment.
 
 The initial public URL check returned 404 while the first deployment was still starting. After Railway reported ACTIVE, GET returned 200 and POST returned 201. Deployment and screenshots are complete. No optional stretch goal is claimed.
-
-## Submission
-
-Submit https://github.com/simon97153-prog/module4-taskflow-api to NTULearn. Because the repository is private, ensure the assessor can access it before submission.
 
 ## Module 3 API reference
 
@@ -112,9 +111,9 @@ Import `TaskFlow.postman_collection.json`. Start the application, then run the r
 2. Create a task (201).
 3. Get it by ID (200).
 4. Update it (200).
-5. Mark it complete (200).
-6. Delete it (200).
-7. Get the deleted task (404).
+5. Mark it complete (200). skipped 
+6. Delete it (200). skipped 
+7. Get the deleted task (404). skipped 
 
 For POST and PUT, select Body → raw → JSON. Example:
 
